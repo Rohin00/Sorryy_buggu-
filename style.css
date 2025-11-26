@@ -1,0 +1,96 @@
+/* style.css - romantic apology site */
+:root{
+  --bg:#fff0f6;
+  --card:#ffffff;
+  --accent:#ff6b9a;
+  --muted:#666;
+  --glass: rgba(255,255,255,0.7);
+  --radius:18px;
+  --max:720px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,107,154,0.06), transparent 10%),
+    radial-gradient(circle at 90% 90%, rgba(255,200,220,0.06), transparent 10%),
+    var(--bg);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:40px 20px;
+}
+
+.center{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 80px)}
+.card{
+  width:100%;
+  max-width:var(--max);
+  background:linear-gradient(180deg, rgba(255,255,255,0.9), var(--card));
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align:center;
+  position:relative;
+}
+
+.hearts{font-size:32px;margin-bottom:6px;opacity:0.95}
+h1{margin:6px 0 6px;font-size:26px}
+h2{margin-top:0}
+.lead{color:var(--muted);margin-bottom:12px}
+
+.typewriter{min-height:66px;font-size:18px;color:#333;margin:18px 0;padding:12px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff6);box-shadow:inset 0 1px 0 rgba(0,0,0,0.03)}
+
+.nav{display:flex;gap:12px;justify-content:center;margin-top:14px}
+.btn{
+  background:linear-gradient(90deg,var(--accent),#ff7aa8);
+  color:white;padding:10px 16px;border-radius:12px;border:0;text-decoration:none;cursor:pointer;font-weight:600;
+  box-shadow:0 6px 18px rgba(255,107,154,0.14);
+}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid rgba(255,107,154,0.12)}
+
+.small{color:var(--muted);font-size:13px;margin-top:12px}
+
+.apology .paper{
+  text-align:left;
+  padding:22px;
+  border-radius:12px;
+  background: linear-gradient(180deg, #fff, #fffaf6);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+}
+blockquote{
+  margin:12px 0;padding:12px 16px;border-left:4px solid rgba(255,107,154,0.18);background:rgba(255,240,245,0.6);border-radius:8px;color:#333;
+}
+.actions{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.reply{display:flex;gap:8px;margin-top:10px}
+.reply input{flex:1;padding:8px;border-radius:8px;border:1px solid #eee}
+
+.close{position:absolute;left:18px;bottom:12px;color:var(--muted);text-decoration:none}
+
+.notes{list-style:none;padding:0;text-align:left}
+.notes li{padding:8px 0;border-bottom:1px dashed #ffeef2}
+@media (max-width:520px){
+  .card{padding:18px;border-radius:14px}
+  .typewriter{font-size:16px}
+}
+
+/* confetti burst */
+.confettiBurst{
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,100,140,0.95) 10%, transparent 11%),
+    radial-gradient(circle at 60% 30%, rgba(255,200,40,0.95) 10%, transparent 11%),
+    radial-gradient(circle at 30% 70%, rgba(140,80,255,0.95) 10%, transparent 11%),
+    radial-gradient(circle at 80% 80%, rgba(80,200,160,0.95) 10%, transparent 11%);
+  background-size: 20% 30%, 20% 20%, 20% 30%, 20% 20%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  animation: fadeUp 1.2s ease forwards;
+}
+@keyframes fadeUp{
+  0%{opacity:0; transform: translateX(-50%) translateY(40px) scale(0.9)}
+  20%{opacity:1}
+  100%{opacity:0; transform: translateX(-50%) translateY(-120px) scale(1.05)}
+}
